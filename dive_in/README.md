@@ -111,6 +111,33 @@ product [1,2,5,6,7,9,2,0] -- returns 0
 
 
 
+`elem` takes a thing and a list of things and tells us if that thing is an element of the list. It's usually called as an infix function because it's easier to read that way.
+
+```haskell
+ 4 `elem` [3,4,5,6]   -- returns True
+ 10 `elem` [3,4,5,6]  -- returns False
+```
+
+
+
+Haskell has the texas range the same way python uses it: `[1..20]`
+
+It can be done with letters as well:
+
+```haskell
+['a'..'z']  -- returns a to z lower case
+['K'..'Z']  -- returns K to Z upper case
+```
+
+```haskell
+[2,4..20]  -- returns [2,4,6,8,10,12,14,16,18,20]  
+[3,6..20]  -- returns [3,6,9,12,15,18]
+```
+
+
+
+
+
 
 
  
