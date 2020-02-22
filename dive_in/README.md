@@ -59,8 +59,58 @@ null [] -- returns True
 
 
 
- 
+`reverse` reverses a list.
 
- 
+```haskell
+reverse [5,4,3,2,1]  -- returns [1,2,3,4,5]  
+```
+
+
+
+`take` takes number and a list. It extracts that many elements from the beginning of the list. Watch.
+
+```haskell
+take 3 [5,4,3,2,1] -- returns [5,4,3]
+take 1 [3,9,3]     -- returns [3]
+take 5 [1,2]  	   -- returns [1,2]
+take 0 [6,6,6]     -- returns []
+```
+
+
+
+`drop` works in a similar way, only it drops the number of elements from the beginning of a list.
+
+```haskell
+drop 3 [8,4,2,1,5,6]  -- returns [1,5,6]
+drop 0 [1,2,3,4]      -- returns [1,2,3,4]
+drop 100 [1,2,3,4]    -- returns []
+```
+
+
+
+`maximum` takes a list of stuff that can be put in some kind of order and returns the biggest element.
+
+`minimum` returns the smallest.
+
+```haskell
+ minimum [8,4,2,1,5,6]  -- returns 1
+ maximum [1,9,2,3,4]    -- returns 9
+```
+
+
+
+`sum` takes a list of numbers and returns their sum.
+
+`product` takes a list of numbers and returns the product.
+
+```haskell
+sum [5,2,1,6,3,2,5,7]     -- returns 31
+product [6,2,1,2]         -- returns 24
+product [1,2,5,6,7,9,2,0] -- returns 0
+```
+
+
+
+
 
  
