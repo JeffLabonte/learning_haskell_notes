@@ -160,6 +160,11 @@ take 10 (cycle [1,2,3])  -- returns [1,2,3,1,2,3,1,2,3,1]
 take 12 (cycle "LOL ")   -- returns "LOL LOL LOL " 
 ```
 
+`repeat` takes an element and produces an infinite list of just that element. It's like cycling a list with only one element.
+
+```haskell
+take 10 (repeat 5)  -- returns [5,5,5,5,5,5,5,5,5,5]  
+```
 
 
 
