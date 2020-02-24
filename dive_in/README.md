@@ -6,7 +6,7 @@ Those are the notes I took while reading http://learnyouahaskell.com/.
 
 
 
-## Useful built-in functions
+## Useful built-in functions for arrays
 
 
 
@@ -170,11 +170,36 @@ This paragram comes from http://learnyouahaskell.com/starting-out as well:
 
     Although it's simpler to just use the `replicate` function if you want some number of the same element in a list. `replicate 3 10` returns `[10,10,10]`.
  
- List comprehension in haskell:
+## List comprehension in haskell:
 
 This mathematical expression can be expressed that way in haskell:
  ![](http://s3.amazonaws.com/lyah/setnotation.png)
 
  ```haskell
- [x*2 | x <- [1..10]]  -- returns [2,4,6,8,10]
+ [x*2 | x <- [1..10]]  -- returns [2,4,6,8,10,12,14,16,18,20]
  ``` 
+
+ Let's say we want only the elements which, doubled, are greater than or equal to 12.
+
+ ```haskell
+ [x*2 | x <- [1..10], x*2 >= 12]  -- returns [12,14,16,18,20]  
+ ```
+
+ Cool, it works. How about if we wanted all numbers from 50 to 100 whose remainder when divided with the number 7 is 3? Easy.
+
+```haskell
+[ x | x <- [50..100], x `mod` 7 == 3]  -- returns [52,59,66,73,80,87,94] 
+```
+
+Predicates can be filtered out, this way:
+
+```haskell
+boomBangs xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x]   
+boomBangs [7..13] -- return ["BOOM!","BOOM!","BANG!","BANG!"]
+```
+
+You filter multiple values:
+
+```haskell
+[ x | x <- [10..20], x /= 13, x /= 15, x /= 19] -- returns [10,11,12,14,16,17,18,20] 
+```
