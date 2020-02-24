@@ -235,3 +235,19 @@ Create our own version of lenght:
 ```haskell
 length' xs = sum [1 | _ <- xs]   -- _ is used the same way as in python
 ```
+
+This list comprehension will go thru all the elements of `xs` then return 1. Every 1's will be added to the last one from the function `sum`. The result will the length of your list!
+
+Other uses to the list comprehension:
+
+```haskell
+removeNonUppercase st = [ c | c <- st, c `elem` ['A'..'Z']]
+```
+
+as the name of the function suggest it, this function will remove all the element that aren't upper cased!
+
+Examples:
+
+```haskell
+removeNonUppercase "Hahaha! Ahahaha!" -- reutrns HA
+```
