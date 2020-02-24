@@ -203,3 +203,35 @@ You filter multiple values:
 ```haskell
 [ x | x <- [10..20], x /= 13, x /= 15, x /= 19] -- returns [10,11,12,14,16,17,18,20] 
 ```
+
+It is possible to have multiple predicates in a list comprehension
+
+```haskell
+[ x*y | x <- [2,5,10], y <- [8,10,11]]  -- returns [16,20,22,40,50,55,80,100,110]
+```
+
+It is possible possible to filter our predicates:
+
+```haskell
+[ x*y | x <- [2,5,10], y <- [8,10,11], x*y > 50]  -- returns [55,80,100,110] 
+```
+
+Haskell allows to do list comprehensions with string as well:
+
+```haskell
+let nouns = ["hobo","frog","pope"]  
+let adjectives = ["lazy","grouchy","scheming"] 
+[adjective ++ " " ++ noun | adjective <- adjectives, noun <- nouns] 
+{-
+returns:
+
+["lazy hobo","lazy frog","lazy pope","grouchy hobo","grouchy frog",  
+"grouchy pope","scheming hobo","scheming frog","scheming pope"]  
+-}
+```
+
+Create our own version of lenght:
+
+```haskell
+length' xs = sum [1 | _ <- xs]   -- _ is used the same way as in python
+```
