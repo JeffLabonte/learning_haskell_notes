@@ -134,8 +134,31 @@ It can be done with letters as well:
 [3,6..20]  -- returns [3,6,9,12,15,18]
 ```
 
+it is also possible with floating point numbers:
+
+```haskell
+[0.1, 0.3 .. 1]  -- returns [0.1,0.3,0.5,0.7,0.8999999999999999,1.0999999999999999]  
+```
+
+Paragraph from http://learnyouahaskell.com/starting-out :
+
+    You can also use ranges to make infinite lists by just not specifying an upper limit. Later we'll go into more detail on infinite lists. For now, let's examine how you would get the first 24 multiples of 13. Sure, you could do [13,26..24*13]. But there's a better way: take 24 [13,26..]. Because Haskell is lazy, it won't try to evaluate the infinite list immediately because it would never finish. It'll wait to see what you want to get out of that infinite lists. And here it sees you just want the first 24 elements and it gladly obliges.
 
 
+So basically, you create yourself a lazy generator. 
+
+```haskell
+let infiniteLoop = [13,26..]
+take 24 infiteLoop   -- returns 24 first values
+take 1000 infiteLoop -- returns 1000 first values
+```
+
+`cycle` takes a list and cycles it into an infinite list. If you just try to display the result, it will go on forever so you have to slice it off somewhere.
+
+```haskell
+take 10 (cycle [1,2,3])  -- returns [1,2,3,1,2,3,1,2,3,1]
+take 12 (cycle "LOL ")   -- returns "LOL LOL LOL " 
+```
 
 
 
