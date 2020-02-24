@@ -166,6 +166,15 @@ take 12 (cycle "LOL ")   -- returns "LOL LOL LOL "
 take 10 (repeat 5)  -- returns [5,5,5,5,5,5,5,5,5,5]  
 ```
 
+This paragram comes from http://learnyouahaskell.com/starting-out as well:
 
-
+    Although it's simpler to just use the `replicate` function if you want some number of the same element in a list. `replicate 3 10` returns `[10,10,10]`.
  
+ List comprehension in haskell:
+
+This mathematical expression can be expressed that way in haskell:
+ ![](http://s3.amazonaws.com/lyah/setnotation.png)
+
+ ```haskell
+ [x*2 | x <- [1..10]]  -- returns [2,4,6,8,10]
+ ``` 
