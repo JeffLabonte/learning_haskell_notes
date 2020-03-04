@@ -3,4 +3,8 @@
 
 main :: IO()
 main = interact wordCount
-  where wordCount input = show (length (lines input)) ++ "\n"
+-- Count Lines
+--  where wordCount input = show  (length (lines input)) ++ "\n"
+-- Count words
+-- where wordCount input = show (length (words input)) ++ "\n"
+ where wordCount input = show (length input) ++ "\n"
