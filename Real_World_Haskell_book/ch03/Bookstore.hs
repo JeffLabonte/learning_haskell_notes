@@ -9,10 +9,21 @@ data BookInfo = Book Int String [String]
 data MagazineInfo = Magazine Int String [String]
                     deriving (Show)
 
-
 data BookReview = BookReview BookInfo CustomerID ReviewBody  -- Better Review
 
 type BookRecord = (BookInfo, BookReview)
 
 
 myInfo = Book 0 "Algebra of Programming" ["Richard Bird", "Oege de Moor"]
+
+
+-- Billing Info Type - Algebraic data types
+
+type CardHolder = String
+type CardNumber = String
+type Address = [String]
+
+data BillingInfo = CreditCard CardNumber CardHolder Address
+                | CashOnDelivery
+                | Invoice CustomerID
+                deriving (Show)
