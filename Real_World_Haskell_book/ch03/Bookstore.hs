@@ -34,8 +34,8 @@ bookTitle   (Book id title authors) = title
 bookAuthors (Book id title authors) = authors
 
 
-nicerID     (Book id _      _      ) = id
-nicerTitle  (Book _  title  _      ) = title
+nicerID       (Book id _      _      ) = id
+nicerTitle    (Book _  title  _      ) = title
 nicerAuthors  (Book _  _      authors) = authors
 
 
