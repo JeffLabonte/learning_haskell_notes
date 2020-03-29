@@ -44,4 +44,16 @@ nicerID       (Book id _      _      ) = id
 nicerTitle    (Book _  title  _      ) = title
 nicerAuthors  (Book _  _      authors) = authors
 
+customer1 = Customer 271828 "J.R. Hacker"
+            ["255 Syntax Ct",
+             "Milpitax, CA 95134",
+             "USA"]
+
+customer2 = Customer {
+                customerID = 271828
+              , customerAddress = ["1048576 Disk Driver",
+                                   "Milpitas, CA",
+                                   "USA"]
+              , customerName = "Jane Q. Citizen"
+              }
 
